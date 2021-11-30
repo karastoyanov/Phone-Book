@@ -22,24 +22,25 @@ while True:
             if len(data) > 0:
                 fo.write("\n")
             fo.write(str(contact_name) + " >>> ")
-            contact_name = ''
             break
         for v in contact_number:
             fo.write(str(contact_number))
+            print(f"{contact_name} was saved in the contact list.")
             contact_number = ''
+            contact_name = ''
             break
-        print(f"{contact_name} was saved in the contact list.")
-             
-    if user_choice == "A": 
-        for name, number in contact_book.items():
-            print(f'Contact name -> {name}. Phone number -> {number}')
-    
+   
+    if user_choice == "A":
+        pass
+        
+        
     if user_choice == "S":
         search_name = input("Enter a contact name: ")
         if search_name in contact_book:
             print(f'{search_name} has been found in contact list. {search_name} phone number is {contact_book.get(contact_name)}')
         else: 
             print(search_name, "is not found in the contact list.")
+    
     
     if user_choice == "D":
         contact_to_delete = input("Enter the contact name you would like to delete: ")
@@ -49,7 +50,6 @@ while True:
         else:
             print(f"{contact_to_delete} has not been found.")
     
+    
     if user_choice == "X":
         break
-
-
