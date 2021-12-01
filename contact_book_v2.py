@@ -1,5 +1,5 @@
 import fileinput
-
+import re
 
 def action(choice):
     user_input = input("Select one of the following operations:\n[C] - Create a new contact\n[A] - Show all contacts\n[S] - Search for a contact\n[D] - Delete contact\n[X] - Exit\n").upper()
