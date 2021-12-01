@@ -53,5 +53,3 @@ while True:
     
     if user_choice == "X":
         break
-
-
