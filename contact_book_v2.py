@@ -11,6 +11,7 @@ def action(choice):
         return delete_contact(user_input)
     elif user_input == "A":
         print("Show all contacts.")
+        return show_all(user_input)
     elif user_input == "S":
         print("Search for a specific contact.")
     elif user_input == "X":
@@ -21,6 +22,7 @@ def action(choice):
         return action(None)
     return action(None)
 
+
 def create_contact(new_contact):
     first_name = input("Enter the first name:\n")
     last_name = input("Enter the last name:\n")
@@ -28,7 +30,7 @@ def create_contact(new_contact):
     contacts = {}
     contacts[first_name, last_name] = phone_number
     file = open('contacts.txt', 'a')
-    file.write(f"Contact name: {first_name} >>> {last_name}. Contact phone number: {phone_number} \n\n###########################\n\n")
+    file.write(f"{first_name} {last_name}>>>{phone_number}\n")
     file.close()
     return action(None)
 
@@ -37,6 +39,8 @@ def delete_contact(contact):
     contact_name = input("Enter a contact name to delete:\n")
     with open('contacts.txt', 'r+') as file:
         lines = file.readlines()
+        if contact_name not in lines:
+            print(f"\nContact name {contact_name} not existing.\n")
         for _ in range(len(lines)):
             current_object = lines[_]
             if contact_name in current_object:
@@ -46,6 +50,8 @@ def delete_contact(contact):
                     file.write(element)
                 file.close()
                 break
-                    
-action(None)
+    return action(None)                
 
+
+def show_all(find):
+    pass
