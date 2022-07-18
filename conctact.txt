@@ -1,0 +1,4 @@
+cnc.first_name + 
+ + cnc.last_name + 
+ + cnc.email + 
+ + cnc.phone
