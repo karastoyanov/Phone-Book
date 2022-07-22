@@ -1,5 +1,5 @@
 import sqlite3
-from google.cloud import storage
+import google.cloud
 import mysql.connector
 import sys
 
